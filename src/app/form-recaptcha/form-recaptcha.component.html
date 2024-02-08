@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header d-flex justify-content-center align-items-center flex-column">
+                    <img style="width: 10%;" class="" src=".../../../../../../assets/images/dawan-logo.svg" alt="">
+                    <h3 class="text-center font-weight-light my-2 fs-1">RECAPTCHAD DEMO 🗿</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="aFormGroup">
+                        <div class="form-floating mb-3">
+                            <input  formControlName="name" class="form-control" id="inputName" type="text" placeholder="Enter name" />
+                            <label for="inputName">Name</label>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-center">
+                            <ngx-recaptcha2 #captchaElem formControlName="recaptcha"
+                             [siteKey]="siteKey">
+                           </ngx-recaptcha2>
+                        </div>
+                        <div *ngIf="aFormGroup.valid">
+                            <audio class="d-none" controls autoplay>
+                                <source src="../../assets/giga-chad-music.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                              </audio>                              
+                            <div class="d-flex justify-content-center align-items-center"><img src=".../../../../assets/icegif-309.gif" class="w-75" alt=""></div>
+                        </div>
+                        <div class="mt-4 mb-0 ">
+                            <button [disabled]="aFormGroup.invalid" type="button" class="w-100 btn btn-primary">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
